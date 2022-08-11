@@ -39,7 +39,7 @@ export class PostgresQueryTransformer extends QueryTransformer {
       case 'timestamp with time zone':
       case 'timestamptz':
         return {
-          value: dateToDateTimeString(value),
+          value: dateToDateTimeString(new Date(value)),
           cast: 'TIMESTAMP',
         }
       case 'decimal':
